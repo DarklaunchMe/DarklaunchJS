@@ -12,7 +12,7 @@ npm install darklaunch-js --save
 
 Through yarn:
 ```
-npm install darklaunch-js
+yarn add darklaunch-js
 ```
 
 ## Usage
