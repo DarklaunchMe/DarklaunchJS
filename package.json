@@ -1,0 +1,32 @@
+{
+  "name": "darklaunch-js",
+  "version": "0.1.1",
+  "description": "Darklaunch JavaScript bindings",
+  "main": "/build/bundle.js",
+  "scripts": {
+    "dev": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarklaunchMe/Darklaunch-JS.git"
+  },
+  "keywords": [
+    "darklaunch"
+  ],
+  "author": "Jake Cooper",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DarklaunchMe/Darklaunch-JS/issues"
+  },
+  "homepage": "https://github.com/DarklaunchMe/Darklaunch-JS#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "webpack": "^3.11.0"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security"
+  }
+}
