@@ -9,10 +9,10 @@ class Darklaunch {
         return {} // Todo: Fetch from URL once config is done
     }
     
-    async init(uniqueUserID) {
+    init(uniqueUserID) {
         // Get url from darklaunch.config in their package root
         this.uuid = uniqueUserID;
-        this.flags = await this.fetchFlags();
+        this.flags = this.fetchFlags();
     }
 
     flag(darklaunchFlag) {
@@ -23,6 +23,9 @@ class Darklaunch {
         // ToDo: Darklaunch uuid
         // ToDo: Darklaunch geo
         // ToDo: Darklaunch percentage (Session cached)
+    }
+    meme() {
+        console.log("TESTING");
     }
 }
 
