@@ -24,7 +24,7 @@ class Darklaunch {
         // ToDo: Darklaunch geo
         // ToDo: Darklaunch percentage (Session cached)
     }
-    meme() {
+    log() {
         console.log("TESTING");
     }
 }
