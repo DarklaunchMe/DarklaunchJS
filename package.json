@@ -1,6 +1,6 @@
 {
   "name": "darklaunch-js",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Darklaunch JavaScript bindings",
   "main": "./index.js",
   "typings": "./index.d.ts",

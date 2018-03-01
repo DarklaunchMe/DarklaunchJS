@@ -1,10 +1,17 @@
 
 const dlURL = null; // Get from darklaunch.config in main package root
 
+const config = require('../darklaunch.config.js');
+
 class Darklaunch {
     constructor() {
         // Load flags on import here
         console.log("TESTING CONSTRUCTOR");
+        if (config) {
+            console.log("Successfully loaded config " + config);
+        } else {
+            console.log("No config found");
+        }
     }
 
     fetchFlags() {
