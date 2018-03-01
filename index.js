@@ -4,6 +4,7 @@ const dlURL = null; // Get from darklaunch.config in main package root
 class Darklaunch {
     constructor() {
         // Load flags on import here
+        console.log("TESTING CONSTRUCTOR");
     }
 
     fetchFlags() {
@@ -30,7 +31,7 @@ class Darklaunch {
     }
 
     log(message) {
-        console.log("TESTING");
+        console.log("TESTING LOG");
     }
 }
 
