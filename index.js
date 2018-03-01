@@ -1,7 +1,7 @@
 
 const dlURL = null; // Get from darklaunch.config in main package root
 
-class Darklaunch {    
+export default class Darklaunch {
     fetchFlags() {
         if (!dlURL) {
             return {}
@@ -15,7 +15,7 @@ class Darklaunch {
         this.flags = this.fetchFlags();
     }
 
-    flag(darklaunchFlag) {
+    isEnabled(darklaunchFlag) {
         if (!this.flags || !this.flags[darklaunchFlag]) {
             // No hit in cache or cache not loaded
             return false;
@@ -24,9 +24,8 @@ class Darklaunch {
         // ToDo: Darklaunch geo
         // ToDo: Darklaunch percentage (Session cached)
     }
-    log() {
+
+    log(message) {
         console.log("TESTING");
     }
 }
-
-export default Darklaunch;
