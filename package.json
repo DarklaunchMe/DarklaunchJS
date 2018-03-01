@@ -1,9 +1,9 @@
 {
   "name": "darklaunch-js",
-  "version": "0.1.4",
+  "version": "0.1.8",
   "description": "Darklaunch JavaScript bindings",
-  "main": "./build/bundle.js",
-  "typings": "./types/index.d.ts",
+  "main": "./index.js",
+  "typings": "./index.d.ts",
   "scripts": {
     "dev": "webpack --watch",
     "build": "webpack"
@@ -20,14 +20,5 @@
   "bugs": {
     "url": "https://github.com/DarklaunchMe/Darklaunch-JS/issues"
   },
-  "homepage": "https://github.com/DarklaunchMe/Darklaunch-JS#readme",
-  "dependencies": {
-    "fs": "^0.0.1-security"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "webpack": "^3.11.0"
-  }
+  "homepage": "https://github.com/DarklaunchMe/Darklaunch-JS#readme"
 }

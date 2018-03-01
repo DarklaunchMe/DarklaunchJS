@@ -14,7 +14,7 @@ class Darklaunch {
         return {} // Todo: Fetch from URL once config is done
     }
     
-    init(uniqueUserID) {
+    bind(uniqueUserID) {
         // Get url from darklaunch.config in their package root
         this.uuid = uniqueUserID;
         this.flags = this.fetchFlags();
@@ -35,4 +35,4 @@ class Darklaunch {
     }
 }
 
-export default new Darklaunch();
+module.exports = new Darklaunch();
