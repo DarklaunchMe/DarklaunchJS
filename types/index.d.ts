@@ -1,4 +1,4 @@
-declare namespace Darklaunch {
+declare module Darklaunch {
     function fetchFlags(): void
     function init(uuid?: string): void
     function isEnabled(flag: string): boolean

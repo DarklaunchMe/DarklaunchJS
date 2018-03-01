@@ -1,7 +1,11 @@
 
 const dlURL = null; // Get from darklaunch.config in main package root
 
-export default class Darklaunch {
+class Darklaunch {
+    constructor() {
+        // Load flags on import here
+    }
+
     fetchFlags() {
         if (!dlURL) {
             return {}
@@ -29,3 +33,5 @@ export default class Darklaunch {
         console.log("TESTING");
     }
 }
+
+export default new Darklaunch();
