@@ -1,24 +1,15 @@
-
-const dlURL = null; // Get from darklaunch.config in main package root
-
-const config = require('../darklaunch.config.js');
+const config = require('../../darklaunch.config.js');
 
 class Darklaunch {
     constructor() {
         // Load flags on import here
-        console.log("TESTING CONSTRUCTOR");
-        if (config) {
-            console.log("Successfully loaded config " + config);
-        } else {
-            console.log("No config found");
+        if (!config) {
+            console.log("No Config Found");
+            return 
         }
-    }
-
-    fetchFlags() {
-        if (!dlURL) {
-            return {}
-        }
-        return {} // Todo: Fetch from URL once config is done
+        let dlURL = config.url;
+        console.log("Successfully loaded config");
+        // fetch from url and load into flags
     }
     
     bind(uniqueUserID) {
@@ -38,8 +29,10 @@ class Darklaunch {
     }
 
     log(message) {
-        console.log("TESTING LOG");
+        console.log(message);
     }
 }
 
-module.exports = new Darklaunch();
+let dl = null;
+
+module.exports = dl || (dl = new Darklaunch()); // Singleton
