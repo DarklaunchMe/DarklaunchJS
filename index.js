@@ -1,4 +1,6 @@
-const config = require('../../darklaunch.config.js');
+// const config = require('../../darklaunch.config.js');
+
+const config = require('../DarklaunchDashboard/darklaunch.config.js');
 
 class Darklaunch {
     constructor() {
@@ -7,12 +9,13 @@ class Darklaunch {
             console.log('No Config Found');
             return;
         }
-        this.flags = {};
         let dlURL = config.url;
-        const res = fetch('/api/darklaunch_bundle', { method: 'GET' }).then((res) => res.json()).then((res) =>
-            res.map((darklaunch) => {
-                this.flags[darklaunch.code] = darklaunch;
-            })
+        this.flags = JSON.parse(localStorage.getItem('darklaunchFlags')) || {};
+        fetch('/api/darklaunch_bundle', { method: 'GET' }).then((res) => res.json()).then(
+            (res) =>
+                res.map((darklaunch) => {
+                    this.flags[darklaunch.code] = darklaunch;
+                }) && localStorage.setItem('darklaunchFlags', JSON.stringify(this.flags))
         );
     }
 
