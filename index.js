@@ -4,14 +4,18 @@ class Darklaunch {
     constructor() {
         // Load flags on import here
         if (!config) {
-            console.log("No Config Found");
-            return 
+            console.log('No Config Found');
+            return;
         }
+        this.flags = {};
         let dlURL = config.url;
-        console.log("Successfully loaded config");
-        // fetch from url and load into flags
+        const res = fetch('/api/darklaunch_bundle', { method: 'GET' }).then((res) => res.json()).then((res) =>
+            res.map((darklaunch) => {
+                this.flags[darklaunch.code] = darklaunch;
+            })
+        );
     }
-    
+
     bind(uniqueUserID) {
         // Get url from darklaunch.config in their package root
         this.uuid = uniqueUserID;
@@ -20,9 +24,10 @@ class Darklaunch {
 
     isEnabled(darklaunchFlag) {
         if (!this.flags || !this.flags[darklaunchFlag]) {
-            // No hit in cache or cache not loaded
+            // No hit in cache or cache not loaded or flag disabled
             return false;
         }
+        return this.flags[darklaunchFlag].enabled;
         // ToDo: Darklaunch uuid
         // ToDo: Darklaunch geo
         // ToDo: Darklaunch percentage (Session cached)
